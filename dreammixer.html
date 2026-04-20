@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 🔥 SEO -->
+  <title>Relax zene, eső hang, alvás és babazene – DreamMixer</title>
+  <meta name="description" content="Relax zene, természet hangok, eső hang alváshoz és babazene egy helyen. DreamMixer segít az elalvásban és a nyugodt pihenésben.">
+  <meta name="theme-color" content="#081120">
+
+  <!-- 🔥 CANONICAL -->
+  <link rel="canonical" href="https://myhapyapp.github.io/dreammixer/">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: #081120;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(3, 10, 25, 0.50), rgba(3, 10, 25, 0.72)),
+        url("../background.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+
+    .hero-content { max-width: 900px; }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      font-weight: 700;
+      letter-spacing: -2px;
+      color: #eef7ff;
+    }
+
+    .hero p {
+      margin: 0 auto 30px;
+      max-width: 760px;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      line-height: 1.6;
+    }
+
+    .play-btn img { height: 72px; }
+
+    .mix-section {
+      max-width: 900px;
+      margin: -40px auto 0;
+      padding: 40px 20px 70px;
+      text-align: center;
+    }
+
+    .mix-block { margin-bottom: 50px; }
+
+    .mix-block img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      display: block;
+      margin: 0 auto 22px;
+    }
+
+    .mix-block p {
+      font-size: 18px;
+      line-height: 1.8;
+      opacity: 0.92;
+      margin: 0 auto;
+      max-width: 760px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 25px;
+      color: #b9d8ff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .back:hover { color: white; text-decoration: underline; }
+
+    /* 🔊 HANG GOMB (NEM NYÚLTAM HOZZÁ) */
+    .sound-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(70, 130, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #d8e9ff;
+      cursor: pointer;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transition: all 0.25s ease;
+      z-index: 999;
+      user-select: none;
+    }
+
+    .sound-toggle:hover {
+      transform: translateY(-2px);
+      background: rgba(120, 180, 255, 0.25);
+      color: #ffffff;
+    }
+
+    .sound-toggle.active {
+      background: rgba(110, 190, 255, 0.35);
+      border-color: rgba(130, 200, 255, 0.4);
+      color: #7ad0ff;
+      box-shadow: 0 0 20px rgba(90,170,255,0.5), 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.18); }
+    }
+
+    .sound-toggle.active #soundIcon {
+      animation: pulse 1s infinite alternate;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 70px 16px 40px; }
+      .play-btn img { height: 60px; }
+      .mix-section { padding: 30px 18px 55px; margin-top: -20px; }
+      .mix-block p { font-size: 17px; }
+      .sound-toggle {
+        top: 14px;
+        right: 14px;
+        width: 52px;
+        height: 52px;
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sound-toggle" id="soundBtn">
+    <span id="soundIcon">🔇</span>
+  </div>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="./nosztalgikus_zongora.mp3" type="audio/mpeg">
+  </audio>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>DreamMixer</h1>
+
+      <p>
+        Relax zene, természet hangok, eső hang és babazene egy helyen –
+        tökéletes kombináció az elalváshoz és mélyebb pihenéshez.
+      </p>
+
+      <a href="https://play.google.com/store/apps/details?id=com.myhapyapp.dreammixer" target="_blank" class="play-btn">
+        <img src="../googleplay.png" alt="Get it on Google Play">
+      </a>
+    </div>
+  </section>
+
+  <section class="mix-section">
+
+    <div class="mix-block">
+      <img src="./nature-sounds.jpg" alt="Természet hangjai">
+      <p>A természet hangok segítenek kizárni a zavaró zajokat és nyugodtabb alvást biztosítanak.</p>
+    </div>
+
+    <div class="mix-block">
+      <img src="./relax-music.jpg" alt="Relaxáló zene">
+      <p>A relax zene csökkenti a stresszt és segít ellazulni.</p>
+    </div>
+
+    <div class="mix-block">
+      <img src="./sound-mix.jpg" alt="Természet és zene keverése">
+      <p>A kombináció mélyebb relaxációt eredményez.</p>
+    </div>
+
+    <!-- 🔥 SEO BLOKK -->
+    <div style="margin-top:70px; max-width:820px; margin:auto; text-align:center; opacity:0.85;">
+
+      <h2>Relax zene, eső hang és alvást segítő hangok</h2>
+
+      <p>
+        A DreamMixer ideális választás, ha relax zenét, természet hangokat vagy eső hangot keresel alváshoz.
+      </p>
+
+      <p>
+        Babazene és altatódallamok is elérhetők, így kisbabák számára is tökéletes.
+      </p>
+
+      <h2 style="margin-top:40px;">Sleep music, rain sounds and relaxing sounds</h2>
+
+      <p>
+        DreamMixer is an ideal choice if you are looking for relaxing music, nature sounds or rain sounds for sleep.
+      </p>
+
+      <p>
+        Baby music and lullabies are also available, making it a perfect option for calming babies and creating a more peaceful bedtime routine.
+      </p>
+
+      <!-- 🔥 HIVATALOS GOOGLE PLAY BADGE -->
+      <a href="https://play.google.com/store/apps/details?id=com.myhapyapp.dreammixer" target="_blank" class="play-btn" style="display:inline-block; margin-top:40px;">
+        <img src="../googleplay.png" alt="Get it on Google Play">
+      </a>
+
+    </div>
+
+    <a href="../index.html" class="back">← Vissza a főoldalra</a>
+
+  </section>
+
+  <script>
+    const soundBtn = document.getElementById("soundBtn");
+    const soundIcon = document.getElementById("soundIcon");
+    const bgMusic = document.getElementById("bgMusic");
+
+    let soundOn = false;
+    bgMusic.volume = 0.35;
+
+    soundBtn.addEventListener("click", async () => {
+      soundOn = !soundOn;
+      soundBtn.classList.toggle("active", soundOn);
+
+      if (soundOn) {
+        soundIcon.textContent = "🔊";
+        await bgMusic.play();
+      } else {
+        soundIcon.textContent = "🔇";
+        bgMusic.pause();
+      }
+    });
+  </script>
+
+</body>
+</html>
